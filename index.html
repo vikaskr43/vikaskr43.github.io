@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Kumar Thakur</title>
+    <title>Vikas Kumar Thakur - Ruby Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
@@ -14,83 +15,110 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button id="darkModeToggle"><i class="fas fa-moon"></i></button>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Vikas Kumar Thakur</h1>
-            <h2>Ruby Full Stack Developer</h2>
-            <div class="cta">
-                <a href="#projects" class="btn">View My Work</a>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <img src="path/to/your-photo.jpg" alt="Vikas Kumar Thakur" class="hero-image">
+                <h1>Vikas Kumar Thakur</h1>
+                <h2>Ruby Full Stack Developer</h2>
+                <p class="tagline">Crafting robust web solutions with Ruby on Rails</p>
+                <div class="cta">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="path/to/your-resume.pdf" class="btn secondary" download>Download Resume</a>
+                </div>
             </div>
         </section>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Results-driven Full Stack Developer with 2+ years of experience in developing robust web applications using Ruby on Rails. Proficient in creating and integrating APIs, cloud technologies (AWS, GCP), and agile methodologies. Demonstrated success in delivering scalable solutions for HRM, CRM, and management systems.</p>
-            <div class="skills">
-                <span class="skill-tag">Ruby</span>
-                <span class="skill-tag">Rails</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">React.js</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">GCP</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Terraform</span>
-                <span class="skill-tag">Jira</span>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Results-driven Full Stack Developer with 2+ years of experience in developing robust web applications using Ruby on Rails. Proficient in creating and integrating APIs, cloud technologies (AWS, GCP), and agile methodologies. Demonstrated success in delivering scalable solutions for HRM, CRM, and management systems.</p>
+                </div>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">Ruby on Rails</span>
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                        <!-- Add more skill bars -->
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="projects">
             <h2>My Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hrm">HRM</button>
+                <button class="filter-btn" data-filter="crm">CRM</button>
+                <button class="filter-btn" data-filter="management">Management</button>
+            </div>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="hrm">
+                    <img src="path/to/hrm-project-image.jpg" alt="HRM System" class="project-image">
                     <h3>Human Resource Management (HRM) System</h3>
                     <p>Engineered a comprehensive HRM solution, automating 80% of HR processes. Implemented role-based access control, ensuring data security and compliance. Integrated payroll module via API, reducing processing time by 60%.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Ruby on Rails</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">React.js</span>
+                    </div>
                     <a href="#" class="btn">View Project</a>
                 </div>
-                <div class="project-card">
-                    <h3>Customer Relationship Management (CRM) System</h3>
-                    <p>Developed a scalable CRM system with custom API endpoints, increasing customer retention rate by 30%. Implemented data analytics dashboard, providing real-time insights and improving decision-making.</p>
-                    <a href="#" class="btn">View Project</a>
+                <!-- Add more project cards -->
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>What People Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Vikas is an exceptional developer who consistently delivers high-quality work. His expertise in Ruby on Rails has been invaluable to our team."</p>
+                    - John Doe, Project Manager
                 </div>
-                <div class="project-card">
-                    <h3>Branch Management System</h3>
-                    <p>Designed a centralized system for managing 50+ company branches. Created APIs for real-time data synchronization, improving operational efficiency by 40%. Integrated inventory management module through API, reducing stockouts by 70%.</p>
-                    <a href="#" class="btn">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>Vehicle Fleet Management System</h3>
-                    <p>Developed a fleet management solution for tracking and maintaining 100+ company vehicles. Implemented GPS integration via API and route optimization, reducing fuel costs by 20%. Created predictive maintenance schedules, decreasing vehicle downtime by 35%.</p>
-                    <a href="#" class="btn">View Project</a>
-                </div>
+                <!-- Add more testimonials -->
             </div>
         </section>
 
         <section id="contact">
             <h2>Get in Touch</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> City, Country</p>
+                    <div class="social-links">
+                        <a href="https://github.com/vikaskr43" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/vikas-thakur-b04875175/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://github.com/vikaskr43" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/vikas-thakur-b04875175/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
         <p>&copy; 2024 Vikas Kumar Thakur. All rights reserved.</p>
     </footer>
 
