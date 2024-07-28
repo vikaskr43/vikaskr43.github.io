@@ -29,6 +29,7 @@ nav ul {
     justify-content: center;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -49,7 +50,7 @@ nav ul li a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 6rem 2rem 2rem; /* Adjusted padding for fixed header */
 }
 
 section {
@@ -139,6 +140,7 @@ footer {
     color: var(--secondary-color);
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -147,5 +149,26 @@ footer {
 
     nav ul li {
         margin: 0.5rem 0;
+    }
+
+    main {
+        padding: 6rem 1rem 1rem; /* Adjusted padding for mobile */
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column layout for projects */
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    #contact-form {
+        gap: 0.5rem;
     }
 }

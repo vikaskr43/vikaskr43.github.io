@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Here you would typically send the form data to a server
-            // For now, we'll just log it to the console
+            // Typically, send the form data to a server here
+            // For now, log it to the console
             const formData = new FormData(contactForm);
-            console.log('Form submitted with data:', Object.fromEntries(formData));
+            console.log('Form submitted with data:', Object.fromEntries(formData.entries()));
             alert('Thank you for your message! I\'ll get back to you soon.');
             contactForm.reset();
         });
@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            card.style.transform = 'scale(1.05)';
+            card.style.transform = 'translateY(-5px)';
         });
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'scale(1)';
+            card.style.transform = 'translateY(0)';
         });
     });
 
     // Dynamically update copyright year
     const currentYear = new Date().getFullYear();
-    document.querySelector('footer p').textContent = `© ${currentYear} Your Name. All rights reserved.`;
+    document.querySelector('footer p').textContent = `© ${currentYear} Vikas Kumar Thakur. All rights reserved.`;
 });
