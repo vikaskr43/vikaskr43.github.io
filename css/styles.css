@@ -1,13 +1,15 @@
 :root {
-    --primary-color: #87CEEB; /* Light blue */
+    --primary-color: #87CEEB;
     --secondary-color: #4ecdc4;
     --bg-color: #f7f7f7;
     --text-color: #333;
-    --header-text-color: #1a1a1a; /* Darker text for better contrast on light blue */
+    --header-text-color: #1a1a1a;
+    --card-bg-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -22,6 +24,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 nav ul {
@@ -50,18 +53,19 @@ nav ul li a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 6rem 2rem 2rem; /* Adjusted padding for fixed header */
+    padding: 6rem 2rem 2rem;
 }
 
 section {
     margin: 4rem 0;
     padding: 2rem;
-    background-color: white;
+    background-color: var(--card-bg-color);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
     color: var(--primary-color);
 }
 
@@ -73,6 +77,8 @@ h1, h2, h3 {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -80,7 +86,135 @@ h1, h2, h3 {
     color: var(--header-text-color);
 }
 
-.skill-tag {
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+}
+
+.btn.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.skills {
+    flex: 1;
+}
+
+.skill-bars {
+    display: grid;
+    gap: 1rem;
+}
+
+.skill-bar {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-name {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: var(--secondary-color);
+}
+
+.project-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    margin: 1rem 0;
+}
+
+.tech-tag {
     display: inline-block;
     background-color: var(--secondary-color);
     color: white;
@@ -90,27 +224,36 @@ h1, h2, h3 {
     font-size: 0.9rem;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background-color: var(--card-bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.contact-container {
+    display: flex;
     gap: 2rem;
 }
 
-.project-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
 #contact-form {
+    flex: 2;
     display: grid;
     gap: 1rem;
+}
+
+.contact-info {
+    flex: 1;
 }
 
 #contact-form input,
@@ -140,6 +283,26 @@ footer {
     color: var(--secondary-color);
 }
 
+#darkModeToggle {
+    background-color: transparent;
+    border: none;
+    color: var(--header-text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f7f7f7;
+    --header-text-color: #f7f7f7;
+    --card-bg-color: #2c2c2c;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
@@ -152,15 +315,23 @@ footer {
     }
 
     main {
-        padding: 6rem 1rem 1rem; /* Adjusted padding for mobile */
+        padding: 6rem 1rem 1rem;
     }
 
     section {
         padding: 1rem;
     }
 
+    .about-content {
+        flex-direction: column;
+    }
+
     .project-grid {
-        grid-template-columns: 1fr; /* Single column layout for projects */
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        flex-direction: column;
     }
 
     .btn {
